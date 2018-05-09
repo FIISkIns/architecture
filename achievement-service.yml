@@ -1,0 +1,57 @@
+---
+openapi: 3.0.0
+info:
+  title: AchievementService
+  description: This API provides achievements to users.
+  version: 1.0.0
+paths:
+  /{user}/achievements/:
+    get:
+      parameters:
+      - name: user
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            list<Achievement>:
+              schema:
+                $ref: '#/components/schemas/Achievement'
+        404: {}
+  /{user}/achievements/{achievement}/:
+    get:
+      responses:
+        200:
+          content:
+            Achievement:
+              schema:
+                $ref: '#/components/schemas/Achievement'
+        404: {}
+    parameters:
+    - name: user
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: achievement
+      in: path
+      required: true
+      schema:
+        type: string
+components:
+  schemas:
+    Achievement:
+      required:
+      - id
+      - icon
+      - title
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        icon:
+          format: binary
+          type: string
