@@ -3,14 +3,21 @@ openapi: 3.0.0
 info:
   title: LoginService
   description: This API provides login with Facebook.
+  license:
+    name: GNU GPLv3
+    url: https://www.gnu.org/licenses/gpl.txt
   version: 1.0.0
 paths:
   /login:
     get:
+      description: Gets the 'login box' through which the user logs into Facebook.
       responses:
         302: {}
+        404: {}
   /login/callback:
     get:
+      description: Gets the user ProfilePage if the user has logged in successfully
+        or redirects it to the login box.
       responses:
         302: {}
   /{user}:
