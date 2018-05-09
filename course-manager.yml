@@ -1,0 +1,47 @@
+---
+openapi: 3.0.0
+info:
+  title: CourseManager
+  description: This API manages all the courses available.
+  license:
+    name: GNU GPLv3
+    url: https://www.gnu.org/licenses/gpl.txt
+  version: 1.0.0
+paths:
+  /courses:
+    get:
+      responses:
+        200:
+          content:
+            list<Course>:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+  /courses/{course}:
+    get:
+      responses:
+        200:
+          content:
+            Course:
+              schema:
+                $ref: '#/components/schemas/Course'
+        404: {}
+    parameters:
+    - name: courses
+      in: path
+      required: true
+    - name: course
+      in: path
+      required: true
+      schema:
+        type: string
+components:
+  schemas:
+    Course:
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        id: {}
