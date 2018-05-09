@@ -1,0 +1,61 @@
+---
+openapi: 3.0.0
+info:
+  title: StatsService
+  description: This API provides stats for a currently logged user.
+  license:
+    name: GNU GPLv3
+    url: https://www.gnu.org/licenses/gpl.txt
+  version: 1.0.0
+paths:
+  /{user}:
+    get:
+      parameters:
+      - name: user
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            Stat:
+              schema:
+                $ref: '#/components/schemas/Stats'
+        404: {}
+    parameters:
+    - name: user
+      in: path
+      required: true
+      schema:
+        type: string
+  /{user}/ping:
+    post:
+      parameters:
+      - name: user
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        204: {}
+components:
+  schemas:
+    Stats:
+      required:
+      - coursesCompleted
+      - lastLoggedIn
+      - loggedInSince
+      - longestStreak
+      - startedCourses
+      properties:
+        lastLoggedIn:
+          type: string
+        loggedInSince:
+          type: string
+        longestStreak:
+          type: integer
+        coursesCompleted:
+          type: integer
+        startedCourses:
+          type: integer
