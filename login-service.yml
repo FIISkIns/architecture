@@ -1,0 +1,48 @@
+---
+openapi: 3.0.0
+info:
+  title: LoginService
+  description: This API provides login with Facebook.
+  version: 1.0.0
+paths:
+  /login:
+    get:
+      responses:
+        302: {}
+  /login/callback:
+    get:
+      responses:
+        302: {}
+  /{user}:
+    get:
+      description: Provides info about the current user.
+      responses:
+        200:
+          description: Returns user info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfo'
+        404: {}
+    parameters:
+    - name: user
+      in: path
+      required: true
+      schema:
+        type: string
+components:
+  schemas:
+    UserInfo:
+      required:
+      - id
+      - image
+      - name
+      properties:
+        id:
+          type: string
+        image:
+          format: byte
+          description: provided by URL or data URI
+          type: string
+        name:
+          type: string
