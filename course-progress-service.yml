@@ -1,0 +1,65 @@
+---
+openapi: 3.0.0
+info:
+  title: CourseProgressService
+  description: This API keeps track and provides the user's progress in the courses
+    he has chosen.
+  license:
+    name: GNU GPLv3
+    url: https://www.gnu.org/licenses/gpl.txt
+  version: 1.0.0
+paths:
+  /{user}/{course}/{task}:
+    get:
+      responses:
+        200:
+          content:
+            TaskProgress:
+              schema:
+                $ref: '#/components/schemas/TaskProgress'
+        404: {}
+    put:
+      description: Start or complete task.
+      requestBody: {}
+      responses:
+        200:
+          content:
+            TaskProgress:
+              schema:
+                $ref: '#/components/schemas/TaskProgress'
+        404: {}
+  /{user}/{course}:
+    get:
+      summary: Get the status for the progress on all the tasks.
+      responses:
+        200:
+          content:
+            CourseProgress:
+              schema:
+                $ref: '#/components/schemas/CourseProgress'
+        404: {}
+components:
+  schemas:
+    CourseProgress:
+      required:
+      - courseID
+      - tasksList
+      - taskCompletionList
+      - courseId
+      - tasks
+      properties:
+        courseId:
+          type: string
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskProgress'
+    TaskProgress:
+      required:
+      - taskId
+      - progress
+      properties:
+        taskId:
+          type: string
+        progress:
+          type: string
