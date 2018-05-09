@@ -42,9 +42,6 @@ components:
   schemas:
     CourseProgress:
       required:
-      - courseID
-      - tasksList
-      - taskCompletionList
       - courseId
       - tasks
       properties:
