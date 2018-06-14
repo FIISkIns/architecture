@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ro">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Ghid utilizare FIISkins</title>
+   </head>
+   <body>
+      <header>
+         <h1>Ghid utilizare FIISkins</h1>
+      </header>
+      <div role="contentinfo">
+         <ol role="directory">
+            <li>
+               <a href="#structura_neautentificat">
+               Structura alicației pentru un utilizator neautentificat
+               </a>
+            </li>
+            <li>
+               <a href="#logare">
+               Procesul de logare
+               </a>
+            </li>
+            <li>
+               <a href="#structura_autentificat">
+               Structura aplicației pentru un utilizator autentificat
+               </a>
+               <ol role="directory">
+                  <li>
+                     <a href="#curs"> 
+                     Pagina unui curs
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#profil"> 
+                     Pagina de profil
+                     </a>
+                  </li>
+               </ol>
+            </li>
+            <li>
+               <a href="#delogare">
+               Procesul de delogare
+               </a>
+            </li>
+         </ol>
+      </div>
+      <section id= "structura_autentificat">
+         <h2>
+            <span>1.</span>
+            Structura aplicației pentru un utilizator neautentificat
+         </h2>
+         <p>   Un utilizator neautentificat are acces doar la pagina de Home. Pentru a putea progresa, acesta trebuie să treacă prin procesul de logare. Pentru a se loga poate apăsa pe butonul "Log In" din partea dreapta sus a aplicației, poate apăsa oricare din butoanele de "Sign up" ale cursurilor disponibile, sau poate încerca să acceseze paginile "Profile" sau "Courses". </p>
+      </section>
+      <section id= "logare">
+         <h2>
+            <span>2.</span>
+            Logare
+         </h2>
+         <p> După ce procesul de logare a fost inițiat pentru prima oară, utilizatorul este redirectat către o pagină a rețelei de socializare Facebook. Utilizatorul trebuie să completeze câmpurile "Nume utilizator" și "Parola", apoi să apese butonul de "Log in". Acest lucru va determina apariția unei noi ferestre, în cadrul careia aplicația FIISkins va afișa detalii despre permisiunile de care are nevoie pentru a finaliza procesul de logare. Pentru a continua, utilizatorul trebuie să accepte condițiile impuse. După parcurgerea acestui pas, utilizatorul este redirectat către pagina de "Home", fiind conectat la contul său din cadrul aplicației.
+            <br>
+            În cazul în care acestea nu este prima oară când utilizatorul folosește aplicația, procesul de logare va necesita doar conectarea cu contul de Facebook, fără a mai fi nevoie de acordarea de permisiuni aplicației.
+         </p>
+      </section>
+      <section id="structura_neautentificat">
+         <h2>
+            <span>3.</span>
+            Structura aplicației pentru un utilizator autentificat
+         </h2>
+         <p>
+            După ce procesul de logare s-a desfășurat cu succes, utilizatorul va avea acces la două pagini noi: pagina de cursuri și pagina de profil. De asemenea utilizatorul se va putea înscrie la orice curs disponibil pe pagina de Home, folosind butonul de "Sign up" aferent fiecărui curs. De asemenea în meniul de tip drop-down corespunzător butonului "Courses" vor apărea cursurile disponibile, împărțite in două categorii: "Your Courses" ( cursuri la care utilizatorul s-a înscris folosind procesul descris anterior) și "Available Courses" ( cursuri existente dar la care utilizatorul nu este înscris).
+         </p>
+      </section>
+      <section id="curs">
+         <h3>
+            <span>3.1</span>
+            Pagina unui curs
+         </h3>
+         <p>
+            Utilizatorul poate naviga la pagina unui curs în două moduri: de pe pagina de Home, după ce s-a înscris sau folosind meniul de tip drop-down aferent butonului "Courses". Odată completat acest pas, utilizatorul va fi direcționat către o pagină ce conține un task din cadrul cursului ales. În partea stângă a paginii, există un meniu de task-uri. Fiecare task este marcat ca fiind completat, în progres sau disponibil. Pentru a naviga la un task specific, utilizatorul îl va alege din meniul de task-uri. De asemenea, apăsarea butonului "Continue" în cadrul oricărui task va marca taks-ul ca fiind finalizat și va conduce utilizatorul la următorul task din listă. La completarea ultimului Task, utilizatorul poate apăsa butonul "Learn more", acțiune care îl va redirecta la pagina de Home, pentru a alege un nou curs.
+         </p>
+      </section>
+      <section id="profil">
+         <h3>
+            <span>3.2</span>
+            Pagina de profil
+         </h3>
+         <p> 
+            Pentru a naviga la pagina de profil, utilizatorul poate apăsa butonul de "Profile", disponibil în orice pagină.
+            După ce este direcționat către pagina sa de profil, utilizatorul va avea acces la statistici despre progresul său în cadrul aplicației și la achievement-urile obținute completând diferite task-uri.
+         </p>
+      </section>
+      <section id= "delogare">
+         <h2>
+            <span>4.</span>
+            Procesul de delogare
+         </h2>
+         <p> În cadrul oricărei pagini, în partea dreaptă a paginii există un buton ce conține numele și poza de profil a utilizatorului.
+            Apăsând pe acest buton, utilizatorul va avea acces la un meniu de tip drow-down în care apare opțiunea "Log out". Pentru a se deloga, utilizatorul trebuie doar să apese pe butonul "Log out". 
+         </p>
+      </section>
+   </body>
+</html>
